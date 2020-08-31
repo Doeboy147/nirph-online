@@ -1,5 +1,5 @@
 body {
-
+background-color: #F1F2F7 !important;
 }
 
 .imageThumb {
@@ -30,6 +30,10 @@ input:-webkit-autofill {
 .card {
     border-radius: 0 !important;
     border: 0 !important;
+}
+
+.bg-gray {
+    background-color: #F1F2F7;
 }
 
 .form-control {
