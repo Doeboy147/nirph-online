@@ -13,13 +13,16 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="{{ asset('js/ajax/toastr/toastr.min.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-dark p-2 shadow-sm">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand text-white" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -31,7 +34,6 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -46,10 +48,11 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a href="/home" class="dropdown-item"> Dashboard</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -75,5 +78,6 @@
 <script src="{{ asset('js/ajax/ajax-form.js') }}"></script>
 <script src="{{ asset('js/ajax/main.js') }}"></script>
 <script src="{{ asset('js/ajax/toastr/toastr.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center mt-5">
             <div class="col-md-4">
-                <div class="card bg-white shadow-lg">
+                <div class="card border bg-white shadow-lg">
                     <h4 class="text-center mt-5 mb-4">Sign In</h4>
 
                     <div class="card-body">
@@ -50,8 +50,8 @@
                             </div>
 
                             <div class="form-group row mb-0">
-                                <div class="col-md-12 ">
-                                    <button type="submit" class="btn btn-primary">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-block">
                                         {{ __('Login') }}
                                     </button>
                                 </div>

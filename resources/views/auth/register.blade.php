@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center mt-5">
             <div class="col-md-4">
-                <div class="card">
+                <div class="card shadow border">
                     <h4 class="text-center mt-3 mb-3">Sign Up</h4>
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
@@ -40,8 +40,23 @@
 
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <input id="birthday" placeholder="Date Of Birth" type="text"
-                                           class="form-control @error('birthday') is-invalid @enderror" name="username"
+                                    <input id="email" placeholder="Email Address" type="email"
+                                           class="form-control @error('email') is-invalid @enderror" name="email"
+                                           value="{{ old('email') }}" required autocomplete="name" autofocus>
+
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input id="datepicker" placeholder="Date Of Birth" type="text"
+                                           onfocus="(this.type='date')"
+                                           class="form-control @error('birthday') is-invalid @enderror" name="birthday"
                                            value="{{ old('birthday') }}" required autocomplete="name" autofocus>
 
                                     @error('birthday')
@@ -54,12 +69,17 @@
 
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <label class="text-muted ml-3"> Packages</label>
-                                    <select  class="text-dark form-control @error('package') is-invalid @enderror"
-                                            name="package">
-                                        <option value="basic" class="text-dark"> Basic Subscription</option>
-                                        <option value="standard" class="text-dark"> Standard Subscription</option>
-                                        <option value="awesome" class="text-dark"> Awesome Subscription</option>
+                                    <select class="form-control" name="package">
+                                        <option class="text-muted"> Choose Subscription</option>
+                                        <optgroup label="Monthly Subscriptions">
+                                            <option value="basic"> Basic Subscription - R200 (100 Downloads)</option>
+                                            <option value="standard" class="text-dark"> Standard Subscription - R300
+                                                (250 Downloads)
+                                            </option>
+                                            <option value="awesome" class="text-dark"> Awesome Subscription - R400 (600
+                                                Downloads)
+                                            </option>
+                                        </optgroup>
                                     </select>
 
                                     @error('package')
@@ -92,8 +112,8 @@
                             </div>
 
                             <div class="form-group row mb-0">
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-block">
                                         {{ __('Register') }}
                                     </button>
                                 </div>
